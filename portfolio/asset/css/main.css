@@ -1,0 +1,411 @@
+*,
+*::before,
+*::after{
+    /* Width and height values apply to the content, padding, and border. */
+    box-sizing: border-box;
+}
+
+/* Custom properties */
+:root{
+    --ff-primary: 'Titillium Web', sans-serif;
+    --ff-secondary: 'Courier New', Courier, monospace;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: bisque;
+    --clr-dark: #293039;
+    --clr-accent: #17b7e8;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    /* shadow effect */
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+@media (min-width: 800px){
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General styles */
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img{
+    /* remove some issues might have */
+    display: block;
+    max-width: 100%;
+}
+
+section{
+    padding: 5em 2em;
+    
+    margin: 0 auto;
+}
+
+    /* everythong when focused */
+:focus{
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+.btn:hover,
+.portfolio__item:hover{
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+
+/* Buttons */
+
+.btn{
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    /* make cursor look when its a button instead of link */
+    cursor: pointer;
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+
+
+/* Typography */
+
+h1,
+h2,
+h3{
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {font-size: var(--fs-h1);}
+h2 {font-size: var(--fs-h2);}
+h3 {font-size: var(--fs-h3);}
+
+
+.section__title{
+    margin-bottom: .25em;
+}
+
+.section__title--intro{
+    display: block;
+}
+
+.section__subtitle{
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about{
+    background: var(--clr-accent);
+    font-family: var(--ff-secondary);
+    padding: .25em 1em;
+}
+
+.section__subtitle--intro{
+    margin-bottom: 1em;
+}
+
+
+
+
+/* Header */
+
+header{
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo i{
+    font-size: 2rem;
+}
+
+.nav{
+     
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  #navbar {
+    overflow: hidden;
+  }
+
+
+
+/* Intro */
+
+.intro {
+    position: relative;
+    margin: 0 auto;
+}
+
+.intro__img{
+    /* box-shadow: var(--bs); */
+}
+.section__subtitle--intro{
+    margin-top: 5%;
+}
+
+@media (min-width: 660px){
+    .intro{
+        display: grid;
+        /* min-content => define min width of the box so no overflow */
+        /* max-content => define max width of the box so it doesn't waste space*/
+        width: min-content;
+        margin: 0 auto;
+        column-gap: 1em;
+        grid-template-areas: 
+                "img title"
+                "subtitle subtitle";
+        grid-template-columns: min-content min-content;
+    }
+
+    .intro__img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+        margin-top: 20%;
+    }
+
+    .section__subtitle--intro{
+        /* get rid of the extra background */
+        align-self: start;
+        grid-column: -1/1;
+        grid-row: 2;
+        /* text-align: right; */
+        /* left extention */
+        position: relative;
+        left: -1.25em;
+        /* align with the right div border */
+        width: calc(100% + 1.25em);
+        margin-top: 5%;
+    }
+}
+
+
+
+
+/* My services */
+
+.my-service{
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    background-blend-mode: multiply;
+    text-align: center;
+    
+}
+
+.section__title--service{
+    color: var(--clr-accent);
+    position: relative;
+}
+
+    /* small line */
+.section__title--service::after{
+    content: '';
+    display: block;
+    width: 25%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-accent);
+    opacity: 0.25;
+}
+
+    /* service to button */
+.services{
+    margin-bottom: 3em;
+}
+
+.service{
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+    /* Big screen */
+@media (min-width: 800px){
+    .services{
+        display: flex;
+        max-width: 1000px;
+        /* To not overwrite services m-b */
+        margin-left: auto;
+        margin-right: auto;
+        /* justify-content: space-evenly; */
+    }
+    /* add gap */
+    .service + .service{
+        margin-left: 2em;
+    }
+}
+
+
+
+/* About Me */
+
+.about-me{
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+@media (min-width: 660px){
+    .about-me{
+        display: grid;
+        grid-template-areas: 
+                "title img"
+                "subtitle img"
+                "content img";
+        column-gap: 2em;
+        
+    }
+
+    .about__img{
+        grid-area: img;
+        /* start to end */
+        grid-row: 1/-1;
+        box-shadow: var(--bs);
+        z-index: 2;
+    }
+
+    .section__subtitle--about{
+        grid-column: 1/-1;
+        grid-row: 2;
+        position: relative;
+        align-self: start;
+        left: -1.25em;
+        text-align: left;
+        width: calc(100% + 2.5em);
+        padding-left: 1.25em;
+    }
+}
+
+
+
+
+/* My work */
+
+.my-work{
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--work{
+    margin-bottom: 0.6em;
+}
+
+.portfolio{
+    display: grid;
+    grid-template-rows: 200px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+}
+
+.portfolio__item{
+    /* when hover show the color */
+    background: var(--clr-accent);
+    /* image increase but not overflow */
+    overflow: hidden;
+}
+
+.portfolio__img{
+    transition: 
+            transform 750ms cubic-bezier(0.5, 0, 0.5, 1),
+            opacity 250ms linear ;
+}
+
+.portfolio__img:hover{
+    transform: scale(1.15);
+    /* adding this will show the bg color */
+    opacity: .5;
+}
+
+/* If not gap, the focus outline will be cut by the near element. do this
+    .item:focus { position:relative; z-index:2} */
+
+
+
+
+/* Footer */
+
+.footer{
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+.footer a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link{
+    font-weight: var(--fw-bold);
+}
+
+.social-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* default padding makes it off center */
+    padding: 0;
+    margin: 2em 0;
+}
+
+.footer__link:hover,
+.social-list__link:hover{
+    opacity: .7;
+}
+
+.social-list__item{
+    margin: 0 1em;
+}
+
+    /* easier to click */
+.social-list__link{
+    padding: 0.5em;
+}
+
+#rights{
+    font-size: small;
+    margin-bottom: 0%;
+    margin-top: 10%;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RootStead</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css"
+                    integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  --> 
+        <script src="https://kit.fontawesome.com/a31efd654a.js" crossorigin="anonymous"></script>        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="asset/css/main.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:burlywood;">
+                <div class="container-fluid">
+                  <a class="navbar-brand"><i class="fas fa-brain"></i>RootStead</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto ">
+                      <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                      <a class="nav-link" href="#about">About</a>
+                      <a class="nav-link" href="#work">Service</a>                      
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </header>
+
+        <!-- Intro -->
+        <section class="intro" id="home">
+            <!--  -- means modifier class  -->
+            <h1 class="section__titile section__title--intro">
+                < Digitalize / Empower > <span id="cursor">|</span>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">
+                Software engineering | Accelerate your business
+            </p>
+            <img src="asset/imgs/rootstead1.png" class="intro__img" alt="rootstead">
+        </section>
+
+
+        <!-- My Services -->
+        <section class="my-service" id="service">
+            <h2 class="section__title section__title--service">What We do</h2>
+            <div class="services">
+                <!-- Item -->
+                <div class="service">
+                    <h3>Design</h3><br>
+                    <p>Bring a service or product to the market starts with a precise 
+                        understanding of the customer experience. We will provide tailored
+                        user-centered design pattern and detailed project scope to 
+                        maximize the potential of your idea.
+                    </p>
+                </div>
+                <!-- Item -->
+                <div class="service">
+                    <h3>Implement</h3><br>
+                    <p>You can take full advantage of our fast, innovative and solution-oriented
+                        work. We strive to provide reliable, scalable and well-documented 
+                        software solutions for any OS and device. Our code is stable and secure 
+                        so you can always trust it to get the job done.
+                    </p>
+                </div>
+                <!-- Item -->
+                <div class="service">
+                    <h3>Deliver</h3><br>
+                    <p>No project is without risks, but we are always honest about the 
+                        possible challenges ahead. We match, adopt and collabrate with
+                        our clients to deliver products that fit the needs of the users.
+                        Whatsmore, you will get project specific support and maintenance.
+                    </p>
+                </div>
+            </div>
+
+            <a href="#work" class="btn">Services</a>
+        </section>
+
+
+        <!-- About me -->
+        <section class="about-me" id="about">
+            <h2 class="section__title section__title--about">About Us</h2>
+            <p class="section__subtitle section__subtitle--about">
+                Team extension 
+            </p>
+
+            <div class="about-me__body">
+                <p>
+                    We are a startup company based in Ontario, Canada.
+                
+                </p>
+                <p> 
+                    Our mission is to digitalize and empower the projects from both 
+                    individuals and large organizations through Profound technology
+                    solutions. With the help of our remote teams from various
+                    backgrounds, we aim to bring lean, user-centric, adaptable services.
+                    
+                </p>
+                <p>
+                    RootStead will help you achieve your goals faster, better. </p>
+                </p>
+            </div>
+
+            <img class="about__img" src="asset/imgs/Team.png" alt="">
+        </section>
+
+
+        <!-- My Work -->
+        <section class="my-work" id="work">
+            <h2 class="section__title section__title--work">Our services</h2>
+            <p class="section__subtitle"></p>
+
+            <div class="portfolio">
+                <!-- Work item -->
+                <a class="portfolio__item">
+                    <img class="portfolio__img" src="asset/imgs/devops.png" alt="">
+                </a>
+                <!-- Work item -->
+                <a class="portfolio__item item2">
+                    <img class="portfolio__img" src="asset/imgs/webdev.png" alt="">
+                </a>
+                <!-- Work item -->
+                <a class="portfolio__item">
+                    <img class="portfolio__img" src="asset/imgs/cloud.jpg" alt="">
+                </a>               
+                
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h2>Talk to us and <b>get your idea realized!</b></h2><br>
+            <a class="footer__link">rootSteadCanada@protonmail.com</a>
+            
+            <h4 id="rights">&copy;2021 RootStead. All rights reserved.</h4>
+        </footer>
+
+        <script src="asset/script/main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    </body>
+</html>
